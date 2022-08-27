@@ -1,0 +1,67 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="static/assets/css/styles.css">
+{% endblock %}
+
+{% block title %}Add A New Cafe{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for('add') }}" method="post" novalidate>
+    {{ form.csrf_token }}
+
+    <div class="cafe-table-container row">
+        <div class="col-sm-12">
+            <h1>Add a new cafe into the database</h1>
+            <div class="input-group mb-3">
+                <ul>
+                    <li>{{ form.name.label}}<br>{{  form.name  }}</li>
+                    {% for err in form.name.errors: %}
+					<span style="color: red;">{{ err }}</span>
+					{% endfor %}
+                    <li>{{ form.map_url.label}}<br>{{  form.map_url  }}</li>
+                    {% for err in form.map_url.errors: %}
+					<span style="color: red;">{{ err }}</span>
+					{% endfor %}
+                    <li>{{ form.img_url.label}}<br>{{  form.img_url  }}</li>
+                    {% for err in form.img_url.errors: %}
+					<span style="color: red;">{{ err }}</span>
+					{% endfor %}
+                    <li>{{ form.location.label}}<br>{{  form.location  }}</li>
+                    {% for err in form.location.errors: %}
+					<span style="color: red;">{{ err }}</span>
+					{% endfor %}
+                    <li>{{ form.has_sockets.label}}      {{  form.has_sockets  }}</li>
+                    {% for err in form.has_sockets.errors: %}
+					<span style="color: red;">{{ err }}</span>
+					{% endfor %}
+                    <li>{{ form.has_toilet.label}}  {{  form.has_toilet  }}</li>
+                    {% for err in form.has_toilet.errors: %}
+					<span style="color: red;">{{ err }}</span>
+					{% endfor %}
+                    <li>{{ form.has_wifi.label}}  {{  form.has_wifi  }}</li>
+                    {% for err in form.has_wifi.errors: %}
+					<span style="color: red;">{{ err }}</span>
+					{% endfor %}
+                    <li>{{ form.can_take_calls.label}}  {{  form.can_take_calls  }}</li>
+                    {% for err in form.can_take_calls.errors: %}
+					<span style="color: red;">{{ err }}</span>
+					{% endfor %}
+                    <li>{{ form.seats.label}}<br>{{  form.seats  }}</li>
+                    {% for err in form.seats.errors: %}
+					<span style="color: red;">{{ err }}</span>
+					{% endfor %}
+                    <li>{{ form.coffee_price.label}}<br>{{  form.coffee_price  }}</li>
+                    {% for err in form.coffee_price.errors: %}
+					<span style="color: red;">{{ err }}</span>
+					{% endfor %}
+                </ul>
+                <div id="submit-button">{{  form.submit  }}</div>
+            </div>
+            <a href="/#">Return to index page</a>
+        </div>
+    </div>
+        </form>
+{% endblock %}

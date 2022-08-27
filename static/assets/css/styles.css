@@ -1,0 +1,65 @@
+body {
+background-color: #333;
+color: white;
+}
+
+a {
+    color: #ffc107;
+}
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  color: white;
+  background-color: #333;
+}
+
+hr{
+border-top: 0.2rem solid;
+margin-bottom: 0px;
+}
+
+.space-above {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.cafe-table-container{
+    padding: 0 4%;
+}
+
+ul{
+list-style: none;
+padding-left: 0px;
+}
+
+input{
+width: 65rem;
+height:26px;
+color: black;
+}
+
+li{
+padding-bottom: 1.8rem;
+}
+
+select{
+width: 65rem;
+height:26px;
+}
+
+#submit-button{
+padding-bottom: 3rem;
+}
+
+#has_sockets, #has_toilet, #has_wifi, #can_take_calls{
+height: fit-content;
+width: auto;
+margin-left: 10px;
+}
+
+#seats{
+color: black;
+}
